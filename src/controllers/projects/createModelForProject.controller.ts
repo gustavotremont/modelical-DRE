@@ -1,11 +1,18 @@
 import { Request, Response } from 'express'
+import { modelServices } from '../../services/models'
+import { handleError } from '../../utils/handleError'
+import { Model } from '../../utils/types'
 
-export const createModelForProject = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  console.log('hello')
-  // const { id } = req.params
-  // const project = await projectServices.createModelForProject(id, req.body)
-  // res.status(200).json(project)
+export const createModelForProject = (req: Request, res: Response): void => {
+  try {
+    const { id: projectId } = req.params
+    const model: Model = modelServices.createModel(
+      req.body,
+      parseInt(projectId)
+    )
+    res.status(200).json(model)
+  } catch (error) {
+    handleError(error, res)
+  }
+  //
 }

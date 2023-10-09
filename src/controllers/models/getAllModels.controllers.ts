@@ -1,23 +1,13 @@
 import { Request, Response } from 'express'
 import { modelServices } from '../../services/models'
-import { Model, RequestError } from '../../utils/types'
+import { Model } from '../../utils/types'
+import { handleError } from '../../utils/handleError'
 
-export const getAllModels = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const getAllModels = (req: Request, res: Response): void => {
   try {
     const modelList: Model[] = modelServices.getAllModels()
     res.status(200).json(modelList)
   } catch (error) {
-    if (error instanceof RequestError) {
-      res.status(404).json({
-        message: error.message
-      })
-    } else {
-      res.status(404).json({
-        message: 'unkown error'
-      })
-    }
+    handleError(error, res)
   }
 }

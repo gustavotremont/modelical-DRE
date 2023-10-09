@@ -1,6 +1,12 @@
-import { Model } from '../../utils/types'
+import { Model, RequestError } from '../../utils/types'
 import { modelRepository } from '../../repositories/models/index'
 
 export const getModel = (modelId: number): Model => {
-  return modelRepository.getModel(modelId)
+  const model = modelRepository.getModel(modelId)
+  if (model === undefined) {
+    throw new RequestError({
+      message: 'The model does not exist, try with another id'
+    })
+  }
+  return model
 }

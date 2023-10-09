@@ -1,11 +1,14 @@
 import { Request, Response } from 'express'
+import { projectService } from '../../services/projects'
+import { handleError } from '../../utils/handleError'
+import { Project } from '../../utils/types'
 
-export const createProject = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
-  console.log('hello')
-  // const { body } = req
-  // const project = await projectServices.createProject(body)
-  // res.status(200).json(project)
+export const createProject = (req: Request, res: Response): void => {
+  try {
+    const { body } = req
+    const project: Project = projectService.createProject(body)
+    res.status(200).json(project)
+  } catch (error) {
+    handleError(error, res)
+  }
 }

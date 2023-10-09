@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/space-before-function-paren */
 export interface Model {
   id: number
   name: string
   description: string
   modelFile: string
-  id_project: number
+  projectId: number
 }
 
 export interface Project {
@@ -18,5 +19,5 @@ export class RequestError extends Error {
   }
 }
 
-export type ModelDTO = Omit<Model, 'id' | 'id_project'>
-export type ProjectDTO = Omit<Model, 'id'>
+export type ModelDTO = Omit<Model, 'id' | 'projectId'>
+export type ProjectDTO = Omit<Project, 'id'>

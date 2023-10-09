@@ -1,24 +1,17 @@
 import { Request, Response } from 'express'
-import { RequestError } from '../../utils/types'
+import { Model } from '../../utils/types'
 import { modelServices } from '../../services/models'
+import { handleError } from '../../utils/handleError'
 
-export const updateModel = async (
-  req: Request,
-  res: Response
-): Promise<void> => {
+export const updateModel = (req: Request, res: Response): void => {
   try {
     const { id } = req.params
-    const updatedModel = modelServices.updateModel(parseInt(id), req.body)
+    const updatedModel: Model = modelServices.updateModel(
+      parseInt(id),
+      req.body
+    )
     res.status(200).json(updatedModel)
   } catch (error) {
-    if (error instanceof RequestError) {
-      res.status(404).json({
-        message: error.message
-      })
-    } else {
-      res.status(404).json({
-        message: 'unkown error'
-      })
-    }
+    handleError(error, res)
   }
 }

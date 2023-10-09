@@ -14,5 +14,5 @@ export const projectController = {
   updateProject,
   deleteProject,
   getAllModelsFromProject,
-  createModelForProject,
+  createModelForProject
 }

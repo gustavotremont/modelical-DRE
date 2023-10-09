@@ -14,6 +14,6 @@ projectRoutes.put('/:id', projectController.updateProject)
 // Deletes the project with the specified ID.
 projectRoutes.delete('/:id', projectController.deleteProject)
 // Returns an array of all models belonging to the project with the specified ID.
-projectRoutes.get('/models', projectController.getAllModelsFromProject)
+projectRoutes.get('/models/:id', projectController.getAllModelsFromProject)
 // Add a new model to a project
 projectRoutes.post('/models/:id', projectController.createModelForProject)
