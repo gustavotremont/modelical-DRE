@@ -17,7 +17,10 @@ export const toNewModel = (object: any): ModelDTO => {
 
 const isString = (text: any): string => {
   if (!(typeof text === 'string' && text !== '')) {
-    throw new RequestError({ message: 'Incorrect type or missing field' })
+    throw new RequestError({
+      message: 'Incorrect type or missing field',
+      status: 400
+    })
   }
 
   return text

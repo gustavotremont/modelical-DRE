@@ -7,7 +7,7 @@ export const createProject = (req: Request, res: Response): void => {
   try {
     const { body } = req
     const project: Project = projectService.createProject(body)
-    res.status(200).json(project)
+    res.status(201).json(project)
   } catch (error) {
     handleError(error, res)
   }

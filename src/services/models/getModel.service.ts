@@ -5,7 +5,8 @@ export const getModel = (modelId: number): Model => {
   const model = modelRepository.getModel(modelId)
   if (model === undefined) {
     throw new RequestError({
-      message: 'The model does not exist, try with another id'
+      message: 'The model does not exist, try with another id',
+      status: 404
     })
   }
   return model

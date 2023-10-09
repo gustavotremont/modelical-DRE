@@ -10,7 +10,7 @@ export const createModelForProject = (req: Request, res: Response): void => {
       req.body,
       parseInt(projectId)
     )
-    res.status(200).json(model)
+    res.status(201).json(model)
   } catch (error) {
     handleError(error, res)
   }

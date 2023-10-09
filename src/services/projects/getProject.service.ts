@@ -5,7 +5,8 @@ export const getProject = (projectId: number): Project => {
   const project = projectRepository.getProject(projectId)
   if (project === undefined) {
     throw new RequestError({
-      message: 'The project does not exist, try with another id'
+      message: 'The project does not exist, try with another id',
+      status: 404
     })
   }
   return project
