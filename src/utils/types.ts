@@ -17,7 +17,7 @@ export class RequestError extends Error {
   status: number
   constructor({ message, status }: { message: string; status: number }) {
     super(message)
-    this.status = 400
+    this.status = status
   }
 }
 
