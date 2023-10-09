@@ -4,6 +4,9 @@ import dotenv from 'dotenv'
 dotenv.config()
 const expressPort = process.env.PORT ?? 3000
 
+/**
+ * Function to handle the init of the express API
+ */
 async function main(): Promise<void> {
   try {
     app.listen(expressPort)

@@ -3,6 +3,11 @@ import { modelServices } from '../../services/models'
 import { handleError } from '../../utils/handleError'
 import { Model } from '../../utils/types'
 
+/**
+ * Controller to handle request for add a new model to a project
+ * @param {Request} req - Express request
+ * @param {Response} res - Express response
+ */
 export const createModelForProject = (req: Request, res: Response): void => {
   try {
     const { id: projectId } = req.params

@@ -1,6 +1,11 @@
 import { projects } from '../../data/projects'
 import { Project, ProjectDTO } from '../../utils/types'
 
+/**
+ * Repository that add a new Project to the collection
+ * @param {ProjectDTO} projectData - Object with the propierties to create the project
+ * @returns {Project} - Returns the new created project
+ */
 export const createProject = (projectData: ProjectDTO): Project => {
   const newId =
     projects.reduce(function (acc, cur) {

@@ -3,6 +3,11 @@ import { Model } from '../../utils/types'
 import { modelServices } from '../../services/models'
 import { handleError } from '../../utils/handleError'
 
+/**
+ * Controller to handle request for update a model
+ * @param {Request} req - Express request
+ * @param {Response} res - Express response
+ */
 export const updateModel = (req: Request, res: Response): void => {
   try {
     const { id } = req.params

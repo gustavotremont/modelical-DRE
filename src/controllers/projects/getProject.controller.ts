@@ -3,6 +3,11 @@ import { projectService } from '../../services/projects'
 import { handleError } from '../../utils/handleError'
 import { Project } from '../../utils/types'
 
+/**
+ * Controller to handle request for get a specified project
+ * @param {Request} req - Express request
+ * @param {Response} res - Express response
+ */
 export const getProject = (req: Request, res: Response): void => {
   try {
     const { id } = req.params
