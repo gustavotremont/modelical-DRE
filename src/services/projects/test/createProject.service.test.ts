@@ -1,9 +1,9 @@
 import { describe, expect, test } from '@jest/globals'
 import { createProject } from '../createProject.service'
 import { projects } from '../../../data/projects'
-import { ProjectDTO, RequestError } from '../../../utils/types'
+import { ProjectToCreateDTO, RequestError } from '../../../utils/types'
 
-const projectData: ProjectDTO = {
+const projectData: ProjectToCreateDTO = {
   name: 'string',
   description: 'string'
 }

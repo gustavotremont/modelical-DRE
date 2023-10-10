@@ -1,13 +1,13 @@
 import { describe, expect, test } from '@jest/globals'
 import { createModel } from '../createModel.repository'
 import { models } from '../../../data/models'
-import { ModelDTO } from '../../../utils/types'
+import { ModelToCreateDTO } from '../../../utils/types'
 import { getAllModels } from '../getAllModels.repository'
 
 describe('createModel Repository', () => {
   test('return the correct created model', () => {
     const projectId = 1
-    const modelData: ModelDTO = {
+    const modelData: ModelToCreateDTO = {
       name: 'string',
       description: 'string',
       modelFile: 'string'
@@ -16,7 +16,7 @@ describe('createModel Repository', () => {
   })
   test('return the correct created model in the projects models', () => {
     const projectId = 100
-    const modelData: ModelDTO = {
+    const modelData: ModelToCreateDTO = {
       name: 'string',
       description: 'string',
       modelFile: 'string'

@@ -1,10 +1,10 @@
 import { describe, expect, test } from '@jest/globals'
 import { updateModel } from '../updateModel.service'
 import { models } from '../../../data/models'
-import { ModelDTO, RequestError } from '../../../utils/types'
+import { ModelToCreateDTO, RequestError } from '../../../utils/types'
 
 const modelId = 5
-const modelData: ModelDTO = {
+const modelData: ModelToCreateDTO = {
   name: 'string',
   description: 'string',
   modelFile: 'string'

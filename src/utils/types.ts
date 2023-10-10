@@ -21,5 +21,8 @@ export class RequestError extends Error {
   }
 }
 
-export type ModelDTO = Omit<Model, 'id' | 'projectId'>
-export type ProjectDTO = Omit<Project, 'id'>
+export type ModelToCreateDTO = Omit<Model, 'id' | 'projectId'>
+export type ProjectToCreateDTO = Omit<Project, 'id'>
+
+export type ProjectToUpdateDTO = Partial<ProjectToCreateDTO>
+export type ModelToUpdateDTO = Partial<ModelToCreateDTO>

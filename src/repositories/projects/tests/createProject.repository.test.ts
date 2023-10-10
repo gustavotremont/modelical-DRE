@@ -1,11 +1,11 @@
 import { describe, expect, test } from '@jest/globals'
 import { createProject } from '../createProject.repository'
-import { ProjectDTO } from '../../../utils/types'
+import { ProjectToCreateDTO } from '../../../utils/types'
 import { getAllProjects } from '../getAllProjects.repository'
 
 describe('createProject Repository', () => {
   test('return the correct created project', () => {
-    const projectData: ProjectDTO = {
+    const projectData: ProjectToCreateDTO = {
       name: 'string',
       description: 'string'
     }
