@@ -1,6 +1,7 @@
 import { modelRepository } from '../../repositories/models'
 import { Model } from '../../utils/types'
 import { toNewModel } from '../../utils/validates'
+import { projectService } from '../projects'
 
 /**
  * Service that handle the model's data and create the new model
@@ -10,5 +11,6 @@ import { toNewModel } from '../../utils/validates'
  */
 export const createModel = (modelData: any, projectId: number): Model => {
   const newModel = toNewModel(modelData)
-  return modelRepository.createModel(newModel, projectId)
+  const project = projectService.getProject(projectId)
+  return modelRepository.createModel(newModel, project.id)
 }

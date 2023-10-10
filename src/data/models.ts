@@ -1,4 +1,6 @@
-export const models = [
+import { Model } from '../utils/types'
+
+export const models: Model[] = [
   {
     id: 1,
     name: 'Doom slayer',
