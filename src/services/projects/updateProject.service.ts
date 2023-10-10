@@ -1,7 +1,7 @@
 import { projectService } from '.'
 import { projectRepository } from '../../repositories/projects'
 import { Project } from '../../utils/types'
-import { toNewProject } from '../../utils/validates'
+import { toNewProjectToUpdate } from '../../utils/validates'
 
 /**
  * Service that handle the project's data and update the project with the specified ID
@@ -11,7 +11,7 @@ import { toNewProject } from '../../utils/validates'
  */
 export const updateProject = (projectId: number, projectData: any): Project => {
   const project = projectService.getProject(projectId)
-  const newProjectData = toNewProject(projectData)
+  const newProjectData = toNewProjectToUpdate(projectData)
 
   const updatedProject = projectRepository.updateProject(
     project.id,

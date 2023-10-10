@@ -19,5 +19,4 @@ export const createModelForProject = (req: Request, res: Response): void => {
   } catch (error) {
     handleError(error, res)
   }
-  //
 }

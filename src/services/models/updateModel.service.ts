@@ -1,7 +1,7 @@
 import { modelRepository } from '../../repositories/models'
 import { modelServices } from '.'
 import { Model } from '../../utils/types'
-import { toNewModel } from '../../utils/validates'
+import { toNewModelToUpdate } from '../../utils/validates'
 
 /**
  * Service that handle the model's data and update the model with the specified ID
@@ -11,7 +11,7 @@ import { toNewModel } from '../../utils/validates'
  */
 export const updateModel = (modelId: number, modelData: any): Model => {
   const model = modelServices.getModel(modelId)
-  const newModelData = toNewModel(modelData)
+  const newModelData = toNewModelToUpdate(modelData)
   const updatedModel = modelRepository.updateModel(model.id, newModelData)
 
   return updatedModel

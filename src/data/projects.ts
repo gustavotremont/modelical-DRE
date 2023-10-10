@@ -1,4 +1,6 @@
-export const projects = [
+import { Project } from '../utils/types'
+
+export const projects: Project[] = [
   {
     id: 1,
     name: 'Doom Eternal',
